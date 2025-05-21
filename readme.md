@@ -1,94 +1,67 @@
-## I'm busy with life and other projects. I don't get enough free time to commit to this project anymore. For now, I will archive this project until further notice. To keep using this, please try to use the last tested version and stay in that version with the block updates option. If you are interested in maintaining this project, please contact me on Discord. Thanks for sticking with this project.
+# BlockTheSpot‑Mac (Active Fork)
 
+**A maintained fork of Nuzair46’s BlockTheSpot‑Mac adding support for Spotify** **1.2.62+ (V8‑snapshot builds) and Apple Silicon.**
 
-<p align="center">        
-  <a href="https://discord.gg/eYudMwgYtY"><img src="https://discord.com/api/guilds/807273906872123412/widget.png"></a>
-</p>
+|                               |                                         |
+| ----------------------------- | --------------------------------------- |
+| **Maintainer**                | Hassan – feel free to open issues / PRs |
+| **Last updated**              | 21 May 2025                             |
+| **Last tested Spotify build** | **1.2.63.394**                          |
 
-<center>
-    <h1 align="center">BlockTheSpot-Mac</h1>
-    <h4 align="center">A multi-purpose adblocker and skip-bypass for the <strong>Spotify for MacOS</strong> </h4>
-    <h5 align="center">Please support Spotify by purchasing premium</h5>
-    <h5 align="center">For Windows, use <a href="https://github.com/mrpond/BlockTheSpot">BlockTheSpot</a></h5>
-    <p align="center">
-        <strong>Last updated:</strong> 17 December 2024<br>
-        <strong>Last tested version:</strong> 1.2.32.985
-    </p> 
-</center>
+> _The original project was archived on 17 Dec 2024. This fork keeps the lights on._
 
 ---
 
-## We need collaborators.
+## 🚀 Features
 
-- We are running short of people who can collaborate and maintain this project. If you are good with bash scripting, please create an issue here or contact red.dev in discord.
+- Blocks banner / video / audio ads
+- Removes telemetry (Sentry, logging/v3)
+- Unlocks unlimited track skips
+- _Optional_ flags
 
-### Features:
+  - hide podcasts / audiobooks from Home
+  - block automatic updates
+  - enable Developer Mode
 
-- Blocks all banner/video/audio ads within the app
-- Blocks logging (Sentry, etc)
-- Unlocks the skip function for any track
-- Blocks Spotify automatic updates (optional)
-- Hides podcasts, episodes and audiobooks on Home Screen (optional)
-- Enable Developer Mode (optional)
+- Works on Intel **and** Apple Silicon (M‑series) Macs, Spotify ≥ 1.1.70 and ≤ 1.2.64 (snapshot layout supported)
 
-### Installation/Update:
+---
 
-- Close Spotify completely.
-- Run The following command in Terminal:
+## 🔧 Installation / Update
 
-```
-bash <(curl -sSL https://raw.githubusercontent.com/Nuzair46/BlockTheSpot-Mac/main/install.sh)
-```
+> **Prerequisites**
+> • macOS 10.11+
+> • `perl`, `zip`, `unzip`, **GNU sed** (`brew install gnu-sed`)
+> • Xcode CLI tools (`xcode-select --install`) unless you skip codesign on Intel (`-S` flag)
 
-#### Note:
-
-- BlockTheSpot-Mac now requires codesign to sign the binaries after patching.
-- For this, you will need to have Xcode installed on your mac.
-- To install xcode, use the following command in terminal:
-
-```
-xcode-select --install
+```bash
+# Close Spotify first
+bash <(curl -sSL https://raw.githubusercontent.com/HassanDev/BlockTheSpot-Mac/main/install.sh) [-flags]
 ```
 
-- If you have already installed xcode, you can skip this step.
-- If you have Intel mac, you can try skipping codesign by using the `-S` flag.
+### Common flags
 
-#### Optional Install Arguments:
+| Flag | Purpose                                      |
+| ---- | -------------------------------------------- |
+| `-f` | Force re‑patch even if a backup exists       |
+| `-h` | Hide podcasts, episodes & audiobooks on Home |
+| `-u` | Block automatic updates                      |
+| `-d` | Enable Developer Mode                        |
+| `-S` | Skip codesign (Intel only)                   |
+| `-U` | **Uninstall** and restore original files     |
 
-`-f` Force patch -- forces re-patching if backup detected  
-`-h` Hide podcasts, episodes and audiobooks on home screen  
-`-P` Path to Spotify.app -- set custom Spotify app path  
-`-u` Block updated -- blocks automatic updates  
-`-d` Enable Developer Mode  
-`-S` Skip Codesign -- only to be used if you have intel mac  
-`-U` Uninstall BlockTheSpot-Mac and restore original.
+Example – hide non‑music shelves and stop future updates:
 
-Use any combination of flags.  
-The following example clears app cache, adds experimental features, leaves new UI enabled and blocks updates:
-
-```
-bash <(curl -sSL https://raw.githubusercontent.com/Nuzair46/BlockTheSpot-Mac/main/install.sh) -hu
+```bash
+bash <(curl -sSL https://raw.githubusercontent.com/HassanDev/BlockTheSpot-Mac/main/install.sh) -f -hu
 ```
 
-### Uninstall:
+---
 
-- Close Spotify completely.
-- Run The following command in Terminal:
+## 🗑 Uninstall
 
+```bash
+bash <(curl -sSL https://raw.githubusercontent.com/HassanDev/BlockTheSpot-Mac/main/install.sh) -U
 ```
-bash <(curl -sSL https://raw.githubusercontent.com/Nuzair46/BlockTheSpot-Mac/main/install.sh) -U
-```
 
-or
-
-- Reinstall Spotify
-
-### Notes:
-
-- Audio/video ads during Podcast playback are currently NOT blocked with BlockTheSpot.
-- Spicetify users: When using BlockTheSpot-Mac + Spicetify, the current script requires running BlockTheSpot first.
-
-### DISCLAIMER
-
-- Ad blocking is the main concern of this repo. Any other feature provided by BlockTheSpot-Mac or consequence of using those features will be the sole responsibility of the user, not BlockTheSpot/BlockTheSpot-Mac.
-- All future forks/clients using this of this repo should be licensed under [AGPL-3.0 License](https://github.com/Nuzair46/BlockTheSpot-Mac/blob/main/LICENSE).
+or just reinstall Spotify from the official dmg.
