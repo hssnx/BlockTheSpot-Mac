@@ -36,7 +36,7 @@
 
 ```bash
 # Close Spotify first
-bash <(curl -sSL https://raw.githubusercontent.com/HassanDev/BlockTheSpot-Mac/main/install.sh) [-flags]
+bash <(curl -sSL https://raw.githubusercontent.com/hssnx/BlockTheSpot-Mac/main/install.sh) [-flags]
 ```
 
 ### Common flags
@@ -53,7 +53,7 @@ bash <(curl -sSL https://raw.githubusercontent.com/HassanDev/BlockTheSpot-Mac/ma
 Example – hide non‑music shelves and stop future updates:
 
 ```bash
-bash <(curl -sSL https://raw.githubusercontent.com/HassanDev/BlockTheSpot-Mac/main/install.sh) -f -hu
+bash <(curl -sSL https://raw.githubusercontent.com/hssnx/BlockTheSpot-Mac/main/install.sh) -f -hu
 ```
 
 ---
@@ -61,7 +61,7 @@ bash <(curl -sSL https://raw.githubusercontent.com/HassanDev/BlockTheSpot-Mac/ma
 ## 🗑 Uninstall
 
 ```bash
-bash <(curl -sSL https://raw.githubusercontent.com/HassanDev/BlockTheSpot-Mac/main/install.sh) -U
+bash <(curl -sSL https://raw.githubusercontent.com/hssnx/BlockTheSpot-Mac/main/install.sh) -U
 ```
 
 or just reinstall Spotify from the official dmg.
